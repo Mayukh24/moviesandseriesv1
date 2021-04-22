@@ -23,12 +23,10 @@ const ucinema = document.getElementById('ucinema')
 // Get initial movies
 getMovies(MAPI_URL)
 
-async function getMovies(url) {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    showMovies(data.results)
-}
+function getMovies(url) {
+    axios.get(url).then((response) =>showMovies(response.data.results))
+    
+};
 
 function showMovies(movies) {
     cinema.innerHTML = ''
@@ -55,13 +53,10 @@ function showMovies(movies) {
 // Get upcoming movies
 getUMovies(UAPI_URL)
 
-async function getUMovies(url) {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    showUMovies(data.results)
-}
-
+function getUMovies(url) {
+    axios.get(url).then((response) =>showUMovies(response.data.results))
+    
+};
 function showUMovies(umovies) {
     ucinema.innerHTML = ''
 
@@ -87,12 +82,10 @@ function showUMovies(umovies) {
 // Get top-rated movies
 getLMovies(TAPI_URL)
 
-async function getLMovies(url) {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    showLMovies(data.results)
-}
+function getLMovies(url) {
+    axios.get(url).then((response) =>showLMovies(response.data.results))
+    
+};
 
 function showLMovies(lmovies) {
     lcinema.innerHTML = ''
@@ -124,12 +117,10 @@ function showLMovies(lmovies) {
 // Get initial series
 getSeries(SAPI_URL)
 
-async function getSeries(url) {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    showSeries(data.results)
-}
+function getSeries(url) {
+    axios.get(url).then((response) =>showSeries(response.data.results))
+    
+};
 
 function showSeries(series) {
     tvSeries.innerHTML = ''
@@ -156,12 +147,10 @@ function showSeries(series) {
 // Get upcoming series
 getTSeries(TSAPI_URL)
 
-async function getTSeries(url) {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    showTSeries(data.results)
-}
+function getTSeries(url) {
+    axios.get(url).then((response) =>showTSeries(response.data.results))
+    
+};
 
 function showTSeries(tseries) {
     ltvSeries.innerHTML = ''
@@ -189,12 +178,10 @@ function showTSeries(tseries) {
 
 getUSeries(USAPI_URL)
 
-async function getUSeries(url) {
-    const res = await fetch(url)
-    const data = await res.json()
-
-    showUSeries(data.results)
-}
+function getUSeries(url) {
+    axios.get(url).then((response) =>showUSeries(response.data.results))
+    
+};
 
 function showUSeries(useries) {
     utvSeries.innerHTML = ''
@@ -217,6 +204,9 @@ function showUSeries(useries) {
         utvSeries.appendChild(tvEl)
     })
 }
+
+
+
 
 
 
