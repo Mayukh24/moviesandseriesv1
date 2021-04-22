@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mstyle.css" />
+    <title>Movie App</title>
+  </head>
+  <body data-barba="wrapper">
+
+
+    <header>
+      <div class="logo-and-ul">
+        <a href = "index.html" class = "logo"><img src="./images/logo.svg" alt="Logo" height="50px"></a>
+        <ul>
+          <li><a href = "movies.html">Movies</a></li>
+          <li><a href = "series.html">TV Shows</a></li>
+          <li><a href = "#">Wishlist</a></li>
+        </ul>
+      </div>
+      
+      <form id="form">
+        <input type="text" id="search" class="search" placeholder="Under Maintenance">
+      </form>
+    </header>
+
+
+
+    <main data-barba="container" data-barba-namespace="movies">
+        <div class="heading-1">
+            <h1>TOP RATED MOVIES</h1>
+            <div class="scroll-c">      
+              <main id="lcinema"></main>        
+            </div>
+          </div>
+      
+          <div class="heading-2">
+              <h1>POPULAR MOVIES</h1>
+              <div class="scroll-c">      
+                <main id="cinema"></main>        
+              </div>
+          </div>
+      
+          <div class="heading-2">
+              <h1>UPCOMING MOVIES</h1>
+              <div class="scroll-c">      
+                <main id="ucinema"></main>        
+              </div>
+          </div>        
+    </main>
+    
+       
+
+    
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
